@@ -11,10 +11,15 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	rush(int x, int y);
+int	rush(int x, int y);
 
 int	main(void)
 {
-	rush(10, 7);
-	return (0);
+	int	i;
+
+	i = rush(-10, 10);
+	if (i == 1)
+		return (0);
+	else if (i == 2)
+		write(1, "Oye, solo se aceptan dimensiones positivas\n", 43);
 }

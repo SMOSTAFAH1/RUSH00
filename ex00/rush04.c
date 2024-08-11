@@ -9,18 +9,19 @@
 /*   Updated: 2024/08/10 17:47:16 by shashemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c);
 
-void	rush(int x, int y)
+int	rush(int x, int y)
 {
 	int	i;
 	int	j;
 
 	i = 1;
 	if (y < 1 || x < 1)
-		write(1, "Oye, solo se aceptan dimensiones positivas", 42);
+		return (2);
 	while (i <= y)
 	{
 		j = 1;
@@ -39,4 +40,5 @@ void	rush(int x, int y)
 		ft_putchar('\n');
 		i++;
 	}
+	return (1);
 }
