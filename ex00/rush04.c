@@ -17,7 +17,7 @@ int	check_error(int x, int y)
 {
 	if (y < 1 || x < 1)
 	{
-		write(1, "Oye, solo se aceptan dimensiones positivas\n", 43);
+		write(1, "¡Oye, solo se aceptan dimensiones positivas!\n", 46);
 		return (1);
 	}
 	return (0);
@@ -36,7 +36,8 @@ void	rush(int x, int y)
 		j = 1;
 		while (j <= x)
 		{
-			if ((i == 1 && j == 1) || (i == y && j == x))
+			if ((i == 1 && j == 1) || ((i == y && j == x)
+					&& (y > 1) && (x > 1)))
 				ft_putchar('A');
 			else if ((i == 1 && j == x) || (i == y && j == 1))
 				ft_putchar('C');
