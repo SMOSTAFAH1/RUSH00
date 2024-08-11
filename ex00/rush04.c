@@ -6,22 +6,31 @@
 /*   By: shashemi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 14:45:55 by shashemi          #+#    #+#             */
-/*   Updated: 2024/08/10 17:47:16 by shashemi         ###   ########.fr       */
+/*   Updated: 2024/08/11 11:27:45 by shashemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c);
 
-int	rush(int x, int y)
+int	check_error(int x, int y)
+{
+	if (y < 1 || x < 1)
+	{
+		write(1, "Oye, solo se aceptan dimensiones positivas\n", 43);
+		return (1);
+	}
+	return (0);
+}
+
+void	rush(int x, int y)
 {
 	int	i;
 	int	j;
 
 	i = 1;
-	if (y < 1 || x < 1)
-		return (2);
+	if (check_error(x, y))
+		return ;
 	while (i <= y)
 	{
 		j = 1;
@@ -40,5 +49,4 @@ int	rush(int x, int y)
 		ft_putchar('\n');
 		i++;
 	}
-	return (1);
 }
